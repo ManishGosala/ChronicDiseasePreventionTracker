@@ -54,5 +54,9 @@ python train_model.py
 Launch with:
 voila chronic_tracker.ipynb
 
+Screenshot:
+![image](https://github.com/user-attachments/assets/5901e7f7-ff69-42c6-ad4a-41a142cc401c)
+
+
 
 

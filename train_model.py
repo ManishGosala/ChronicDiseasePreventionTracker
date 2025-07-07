@@ -4,7 +4,7 @@ import joblib
 
 # Sample data
 data = pd.read_csv({
-    "C:\Users\dhanasri\Downloads\health_metrics_50.csv"
+    "C:/Users/dhanasri/Downloads/health_metrics_50.csv"
 })
 
 X = data[['glucose', 'bp', 'bmi', 'age']]

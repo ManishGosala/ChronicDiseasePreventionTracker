@@ -1,62 +1,92 @@
-# 🩺 Chronic Disease Prevention Tracker
+# 🩺 Chronic Disease Prevention Tracker by Manish Gosala
 
-This project is an early warning system that monitors user health metrics (like glucose, blood pressure, BMI, and age) to predict the risk of chronic diseases such as:
+This project is a personalized early detection system that predicts the risk of chronic conditions like **Diabetes**, **Hypertension**, and **Metabolic Syndrome** based on user lifestyle data.
 
-- **Pre-diabetes**
-- **Hypertension**
-- **Metabolic Syndrome**
-
-It uses a trained machine learning model to detect risk and suggest lifestyle-based intervention strategies.
+It is built entirely in **Jupyter Notebook** using **machine learning** with `ipywidgets` for interactivity — no web development frameworks like Flask or Streamlit involved.
 
 ---
 
-## ✨ Features
+## 🎯 Problem Statement
 
-- 🧠 AI-powered risk prediction
-- 📈 User input for health metrics (Glucose, BP, BMI, Age)
-- 🎯 Interactive UI using Jupyter Widgets
-- 🎨 Styled web interface via Voila + CSS
-- 📁 Modular: Easily extend to include more factors or conditions
+**Can we build a notebook-based health tracker that takes simple lifestyle inputs (BMI, smoking habits, activity level, etc.) and predicts early signs of chronic diseases?**  
+This tool aims to help users receive early warnings and actionable health tips, promoting prevention through awareness.
 
 ---
 
-## 📦 Requirements
+## 🔍 Dataset Used
 
-Make sure you have:
+- `diabetes_binary_health_indicators_BRFSS2015.csv`  
+  (Sourced from [Kaggle](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset))
 
-- Python 3.8 or later
-- Jupyter Notebook
-- Voila
-- ipywidgets
-- pandas, numpy, scikit-learn, joblib
+Features used:
+- High Blood Pressure
+- High Cholesterol
+- BMI
+- Age
+- Physical Activity
+- Smoking
+- Fruits and Vegetables intake (used to create `diet_score`)
+- Engineered features: `lifestyle_score` and `diet_score`
 
-Install :
-pip install notebook voila ipywidgets pandas numpy scikit-learn joblib
+---
 
-🪜 Project Structure
+## ✅ Features
+
+- 🧠 Machine Learning model for chronic disease risk detection
+- 🧾 Personalized lifestyle recommendations based on input
+- 📊 Risk tracking over time (saved in a CSV log)
+- 📈 BMI visualization (optional)
+- 🧪 Built-in tips to reduce risk and stay healthy
+
+---
+
+## 🗂️ Project Structure
+
+```
 ChronicTracker/
-├── chronic_tracker.ipynb      # Main notebook UI
-├── train_model.py             # Generates the ML model (one-time run)
-├── chronic_model.pkl          # Trained model used for predictions
-├── styles.css                 # Custom CSS for beautiful UI
-└── README.md                  # Project documentation
+├── chronic_tracker.ipynb              # Jupyter notebook with input form & predictions
+├── train_model.py                     # Script to train the ML model
+├── chronic_model.pkl                  # Trained ML model saved using joblib
+├── diabetes_binary_health_indicators_BRFSS2015.csv  # Dataset
+└── README.md                          # Project description
+```
 
-🧪 Setup Instructions
-1️⃣ Clone or download this repo
-2️⃣ Create and activate virtual environment (optional but recommended)
-python -m venv venv
-venv\Scripts\activate  
-3️⃣ Install dependencies
-pip install notebook voila ipywidgets pandas numpy scikit-learn joblib
-4️⃣ Generate model (if not already present)
+---
+
+## 💻 How to Run (No Website Involved)
+
+1. Clone or download this repo
+
+2. **Install dependencies and run:**
+
+```bash
+pip install notebook ipywidgets pandas numpy scikit-learn joblib
+
+# Train the model
 python train_model.py
-🚀 Run the Web App
-Launch with:
-voila chronic_tracker.ipynb
 
-Screenshot:
-![image](https://github.com/user-attachments/assets/5901e7f7-ff69-42c6-ad4a-41a142cc401c)
+# Launch Jupyter Notebook
+jupyter notebook chronic_tracker.ipynb
+```
 
+Then interact with the notebook UI to enter values and see real-time predictions and lifestyle suggestions.
 
+---
 
+## 📊 Dataset Source
 
+- **File**: `diabetes_binary_health_indicators_BRFSS2015.csv`  
+- **Source**: [Kaggle Dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset)
+
+---
+
+## 👨‍💻 Author
+
+**Manish Gosala**  
+Built as part of a self-initiated project to explore healthcare ML applications in a clean, offline notebook interface.
+
+---
+
+## 📌 Note
+
+This project **does not use a website or Voila**. It runs completely inside **Jupyter Notebook**, making it beginner-friendly, offline, and focused purely on machine learning logic and interactivity.
